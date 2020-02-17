@@ -1,10 +1,7 @@
 #!/bin/bash
-echo 'cleaning cache'
-sudo yum clean all
-sudo yum makecache
 echo 'installing Open jdk 8'
 cd ~
-sudo yum install wget -y
-sudo yum install java-1.8.0-openjdk -y
+sudo apt-get update
+sudo apt install openjdk-8-jdk
 java -version
 echo 'installed java successfully.'

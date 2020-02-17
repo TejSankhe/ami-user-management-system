@@ -4,8 +4,8 @@
         "aws_secret_key": "",
         "aws_region": "",
         "subnet_id": "",
-        "source_ami": "",
-		"ami_users":"",
+        "source_ami": "ami-07ebfd5b3428b6f4d",
+	"ami_users": "",
         "ssh_username":"ubuntu"
     },
     "builders": [
@@ -34,10 +34,7 @@
     "provisioners": [
         {
             "type": "shell",
-            "inline": [
-                "sudo apt-get update"
-            ],
-			"scripts": [
+	    "scripts": [
               "scripts/install-java.sh"
               ]
         }
