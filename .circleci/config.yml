@@ -22,7 +22,7 @@ jobs:
             chmod +x packer
       - run:
           name: Validate Packer Template
-          command: ./packer -var 'source_ami=${source_ami}' validate ami.json
+          command: ./packer validate -var 'source_ami=${source_ami}' ami.json
       - run:
           name: Build AMI
           command: |
