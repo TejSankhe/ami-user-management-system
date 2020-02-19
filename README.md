@@ -15,3 +15,4 @@
             -var "source_ami=${source_ami}" \
             -var "ami_users=${ami_users}" \
              ami.json
+			 
