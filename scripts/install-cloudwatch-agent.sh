@@ -1,5 +1,5 @@
-sudo apt-get install ruby
-sudo apt-get install wget
+sudo apt-get install ruby -y
+sudo apt-get install wget -y
 cd /home/ubuntu
 echo "Downloading codedeploy for us-east-1"
 wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install
