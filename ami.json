@@ -34,9 +34,6 @@
    "provisioners":[
       {
          "type":"shell",
-         "scripts":[
-            "scripts/install-java.sh"
-         ],
          "inline":[
             "echo 'installing Open jdk 8'",
             "cd ~",
