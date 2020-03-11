@@ -1,9 +1,6 @@
 version: 2
 jobs:
   build:
-    branches:
-      only:
-        - master #Only building for master branch pushes
     docker:
       - image: circleci/python:2.7-jessie
     steps:
@@ -33,3 +30,13 @@ jobs:
             -var "source_ami=${source_ami}" \
             -var "ami_users=${ami_users}" \
              ami.json
+             
+workflows:
+  version: 2
+  build-workflow:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
