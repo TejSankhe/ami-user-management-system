@@ -55,7 +55,6 @@
 			   "wget https://s3.amazonaws.com/amazoncloudwatch-agent/centos/amd64/latest/amazon-cloudwatch-agent.rpm",
 			   "echo 'cloud watch downloaded successfully'",
 			   "chmod +x ./amazon-cloudwatch-agent.rpm",
-			   // "sudo rpm -U ./amazon-cloudwatch-agent.rpm",
             "sudo alien -i ./amazon-cloudwatch-agent.rpm",
 			   "echo 'Listing all services'",
 			   "systemctl list-unit-files --type=service",
