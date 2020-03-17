@@ -47,7 +47,18 @@
             "wget https://aws-codedeploy-{{user `aws_region`}}.s3.{{user `aws_region`}}.amazonaws.com/latest/install",
             "echo 'codedeploy for us-east-1 downloaded successfully'",
             "chmod +x ./install",
-            "sudo ./install auto"
+            "sudo ./install auto",
+			"echo 'Downloading cloud watch'",
+			"wget https://s3.amazonaws.com/amazoncloudwatch-agent/centos/amd64/latest/amazon-cloudwatch-agent.rpm",
+			"echo 'cloud watch for us-east-1 downloaded successfully'",
+			"chmod +x ./amazon-cloudwatch-agent.rpm",
+			"sudo rpm -U ./amazon-cloudwatch-agent.rpm",
+			"echo 'Listing all services'",
+			"systemctl list-unit-files --type=service",
+			"echo 'Enabling cloudwatch service'",
+			"sudo systemctl enable amazon-cloudwatch-agent.service",
+			"echo 'Starting cloudwatch service'",
+			"sudo systemctl start amazon-cloudwatch-agent.service"
          ]
       }
    ]
