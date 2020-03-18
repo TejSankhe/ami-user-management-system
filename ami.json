@@ -47,7 +47,21 @@
             "wget https://aws-codedeploy-{{user `aws_region`}}.s3.{{user `aws_region`}}.amazonaws.com/latest/install",
             "echo 'codedeploy for us-east-1 downloaded successfully'",
             "chmod +x ./install",
-            "sudo ./install auto"
+            "sudo ./install auto",
+            "echo 'Installing Cloud watch agent'",
+            "sudo add-apt-repository universe",
+            "sudo apt-get update",
+            "echo 'Downloading cloud watch'",
+            "wget https://s3.amazonaws.com/amazoncloudwatch-agent/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb",
+            "echo 'cloud watch downloaded successfully'",
+            "chmod +x ./amazon-cloudwatch-agent.deb",
+            "sudo dpkg -i -E ./amazon-cloudwatch-agent.deb",
+            "echo 'Listing all services'",
+            "systemctl list-unit-files --type=service",
+            "echo 'Enabling cloudwatch service'",
+            "sudo systemctl enable amazon-cloudwatch-agent.service",
+            "echo 'Starting cloudwatch service'",
+            "sudo systemctl start amazon-cloudwatch-agent.service"
          ]
       }
    ]
